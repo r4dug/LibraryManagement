@@ -37,8 +37,6 @@ public class Book {
 
     public LocalDate getReturnDate () { return returnDate;}
 
-    // not need for title&author&isbn setters
-
     public void setPrice(long price) { this.price=price; }
 
     public void setReturnDate(LocalDate returnDate) {this.returnDate=returnDate;}

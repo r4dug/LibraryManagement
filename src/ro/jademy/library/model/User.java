@@ -2,6 +2,7 @@ package ro.jademy.library.model;
 
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class User {
 
@@ -10,7 +11,7 @@ public class User {
     private String username;
     private String password;
     private boolean isAdmin;
-    public ArrayList<Book> bookList = new ArrayList<>();
+    public List<Book> bookList = new ArrayList<>();
 
     public User(String firstName, String lastName, String username, String password) {      //normal users
         this.firstName = firstName;

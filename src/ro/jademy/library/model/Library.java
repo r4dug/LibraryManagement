@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import ro.jademy.library.model.Book;
 import ro.jademy.library.model.Shelf;
@@ -13,8 +14,8 @@ import ro.jademy.library.model.Library;
 
 public class Library {
 
-    public ArrayList<Shelf> shelfList = new ArrayList<>();
-    public ArrayList<User> userList = new ArrayList<>();
+    public List<Shelf> shelfList = new ArrayList<>();
+    public List<User> userList = new ArrayList<>();
     public static final int BORROW_MAX_TIME = 30;
     public static Scanner sc = new Scanner(System.in);
 
@@ -183,12 +184,12 @@ public class Library {
         return false;
     }
 
-    public ArrayList<Book> searchByTitle (String title) {
+    public List<Book> searchByTitle (String title) {
 
         //TODO: return all the books with the given title
         //TODO: question: should it be the full title or just a part of it?
 
-        ArrayList<Book> bookList = new ArrayList<>();
+        List<Book> bookList = new ArrayList<>();
         for (Shelf shelf : shelfList) {
             for (Book book : shelf.bookList) {
                 if (book.getTitle().toLowerCase().contains(title.toLowerCase())) {
@@ -201,11 +202,11 @@ public class Library {
         return bookList;
     }
 
-    public ArrayList<Book> searchByAuthor (String author) {
+    public List<Book> searchByAuthor (String author) {
 
         //TODO: return all the books with the given author
 
-        ArrayList<Book> bookList = new ArrayList<>();
+        List<Book> bookList = new ArrayList<>();
         for (Shelf shelf : shelfList) {
             for (Book book : shelf.bookList) {
                 if (book.getAuthor().toLowerCase().contains(author.toLowerCase())) {
@@ -223,7 +224,7 @@ public class Library {
 
         //TODO: return a single book with the given isbn
         // question: what should we return when no book is found?
-        ArrayList<Book> bookList = new ArrayList<>();
+        List<Book> bookList = new ArrayList<>();
 
         for (Shelf shelf : shelfList) {
             for (Book book : shelf.bookList) {
